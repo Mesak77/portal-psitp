@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portal Layanan PSITP - BRMP</title>
+  <title>Program dan Evaluasi PPMP-TP - BRMP</title>
   <meta name="theme-color" content="#14532d">
   <script>document.documentElement.classList.add("js")</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,7 +39,7 @@
     <div class="wrap hero-in">
       <div class="hero-title">
         <img class="logo" src="logo.png" alt="Logo Kementerian Pertanian" width="112" height="112">
-        <h1>Portal Layanan &amp; Evaluasi PSITP</h1>
+        <h1>Program dan Evaluasi PPMP-TP</h1>
       </div>
       <p>Akses langsung ke dokumen evaluasi dan layanan distribusi benih PPMPTP secara terpadu, cepat, dan transparan.</p>
       <div class="hero-nav">
@@ -136,6 +136,19 @@
 </div>
     </section>
 
+
+    <!-- SECTION 3: Dashboard PMASS -->
+    <section id="pmass" class="section">
+      <a class="pmass" href="https://andrealfree.github.io/brmp/" target="_blank" rel="noopener">
+        <div class="pmass-text">
+          <span class="chip">Situs sebelumnya</span>
+          <h2 class="pmass-title">Dashboard PMASS</h2>
+          <span class="pmass-url">andrealfree.github.io/brmp</span>
+          <span class="cta">Buka Dashboard<svg class="ico" aria-hidden="true"><use href="#i-out"/></svg></span>
+        </div>
+        <div class="viz" aria-hidden="true"><i style="--h:38%;--b:0"></i><i style="--h:55%;--b:1"></i><i style="--h:46%;--b:2"></i><i style="--h:70%;--b:3"></i><i style="--h:62%;--b:4"></i><i style="--h:88%;--b:5"></i><i style="--h:100%;--b:6"></i></div>
+      </a>
+    </section>
   </main>
 
   <footer id="kontak" class="footer">
@@ -171,7 +184,7 @@ document.querySelectorAll(".toggle").forEach(function(b){
   });
 });
 (function(){
-  var t=document.querySelectorAll(".crops,.archive");
+  var t=document.querySelectorAll(".crops,.archive,.pmass");
   if(!("IntersectionObserver" in window)){t.forEach(function(x){x.classList.add("in")});return;}
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.12});
   t.forEach(function(x){io.observe(x)});

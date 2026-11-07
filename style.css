@@ -203,6 +203,46 @@ html.js .card:not(.open) .list-wrap{grid-template-rows:0fr}
 html.js .archive:not(.in) .card{opacity:0}
 html.js .archive.in .card{animation:pop .8s cubic-bezier(.22,1,.36,1) backwards;animation-delay:calc(var(--c)*120ms)}
 
+/* ===== Dashboard PMASS ===== */
+.pmass{
+  position:relative;overflow:hidden;isolation:isolate;display:grid;gap:1.5rem;align-items:center;
+  padding:clamp(1.5rem,4vw,2.75rem);border-radius:var(--r-lg);color:#fff;
+  background:
+    radial-gradient(circle at 88% 12%,rgba(224,184,62,.32),transparent 45%),
+    repeating-linear-gradient(115deg,rgba(255,255,255,.045) 0 2px,transparent 2px 26px),
+    linear-gradient(135deg,var(--green-800),var(--green-900));
+  box-shadow:0 18px 40px -20px rgba(15,61,34,.6);
+  transition:transform .6s cubic-bezier(.22,1,.36,1),box-shadow .6s;
+}
+@media(min-width:768px){.pmass{grid-template-columns:1.2fr .8fr}}
+.pmass::after{content:"";position:absolute;inset:0 auto 0 0;width:5px;background:linear-gradient(180deg,var(--gold),#f3dc8a,var(--gold))}
+.pmass:hover,.pmass:focus-visible{transform:translateY(-5px);box-shadow:0 28px 50px -22px rgba(15,61,34,.7)}
+.pmass-text{display:flex;flex-direction:column;align-items:flex-start;gap:.6rem}
+.chip{padding:.25rem .8rem;border-radius:999px;border:1px solid #ffffff44;background:#ffffff14;font-size:.75rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:#f3dc8a}
+.pmass-title{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:clamp(1.9rem,4.5vw,3rem);line-height:1.05;letter-spacing:-.02em}
+.pmass-url{font-size:.9375rem;color:#b9d0c1;overflow-wrap:anywhere}
+.cta{
+  display:inline-flex;align-items:center;gap:.6rem;margin-top:.6rem;padding:.75rem 1.4rem;border-radius:999px;
+  background:var(--gold);color:var(--green-900);font-weight:700;font-size:.9375rem;
+  transition:background .3s,gap .4s cubic-bezier(.22,1,.36,1),transform .3s;
+}
+.cta .ico{width:18px;height:18px;transition:transform .4s cubic-bezier(.22,1,.36,1)}
+.pmass:hover .cta{background:#fff;gap:.9rem}
+.pmass:hover .cta .ico{transform:translate(3px,-3px)}
+.viz{display:flex;align-items:flex-end;justify-content:center;gap:clamp(.4rem,1.4vw,.8rem);height:clamp(120px,18vw,180px)}
+.viz i{
+  flex:1;max-width:34px;height:var(--h);border-radius:8px 8px 3px 3px;transform-origin:bottom;
+  background:linear-gradient(180deg,#f3dc8a,var(--gold) 55%,#b98f1f);box-shadow:0 8px 18px -8px rgba(0,0,0,.5);
+}
+html.js .pmass:not(.in){opacity:0}
+html.js .pmass.in{animation:pop .9s cubic-bezier(.22,1,.36,1) backwards}
+html.js .pmass:not(.in) .viz i{transform:scaleY(0)}
+html.js .pmass.in .viz i{animation:grow 1.2s cubic-bezier(.34,1.2,.64,1) backwards;animation-delay:calc(var(--b)*110ms + 350ms)}
+html.js .pmass.in:hover .viz i{animation:wave 1.4s ease-in-out infinite;animation-delay:calc(var(--b)*90ms)}
+@keyframes grow{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+@keyframes wave{0%,100%{transform:scaleY(1)}50%{transform:scaleY(.72)}}
+/* ===== akhir Dashboard PMASS ===== */
+
 /* Footer: kontak + peta + hak cipta */
 .footer{
   position:relative;color:#d5e6da;border-top:5px solid var(--gold);
